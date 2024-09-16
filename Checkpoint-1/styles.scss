@@ -1,0 +1,46 @@
+
+/* THE UNPROCESSED SCSS FILE */
+
+$textColorOne: #127ee2;
+$backgroundColorOne: #237c95;
+$backgroundImage: "maserati";
+
+@mixin recolor {
+  color: $textColorOne;
+}
+
+@mixin mixinTwo {
+  background-color: $backgroundColorOne;
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+}
+
+.taskOne {
+  p {
+    color: $textColorOne;
+  }
+}
+
+.taskTwo {
+  @include recolor;
+}
+
+.taskThree {
+  .nestedDiv {
+    p {
+      color: red;
+    }
+  }
+}
+
+.taskFour {
+  @include mixinTwo;
+}
+
+.taskFive {
+  background-image: url("https://s3.amazonaws.com/bottega-devcamp/scss/cars/#{$backgroundImage}.jpg");
+  width: 300px;
+  height: 300px;
+  object-fit: fill;
+}
